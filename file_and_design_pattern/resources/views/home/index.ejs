@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/dist/css/app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            <div style="width: 25%; float: left;">
+                <label for="file">File</label>
+            </div>
+            <div style="width: 75%; float: left;">
+                <input type="file" name="file" id="file" />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Files</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% files.forEach((file, i) => { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= file %></td>
+                    <td>
+                        <a href="<%= `public/uploads/${file}` %>">Download</a>
+                    </td>
+                </tr>
+            <% })%>
+        </tbody>
+    </table>
+</body>
+</html>
