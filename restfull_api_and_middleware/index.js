@@ -12,6 +12,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 const api = require('./routes/api')
 
+const logger = (req, res, next) => { 
+    console.log(`${req.method} ${req.url} ${req.ip}`)
+    next()
+}
+
+app.use(logger)
+
 app.use('/api/v1', api)
 
 const options = {
