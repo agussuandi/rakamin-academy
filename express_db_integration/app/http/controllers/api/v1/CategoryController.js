@@ -3,7 +3,7 @@ const pool = require('../../../../../db/database')
 const CategoryController = {
     async index(req, res) {
         pool.query('select * from category', (error, results) => {
-            if (error) res.status(500).json({message: 'Something went wrong!'})
+            if (error) return res.status(500).json({message: 'Something went wrong!'})
             return res.json(results.rows)
         })
     },
@@ -16,7 +16,7 @@ const CategoryController = {
             join category on film_category.category_id = category.category_id
             order by film_category.category_id
         `, (error, results) => {
-            if (error) res.status(500).json({message: 'Something went wrong!'})
+            if (error) return res.status(500).json({message: 'Something went wrong!'})
             return res.json(results.rows)
         })
     }
