@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "melawai",
+    "database": "rakamin_academy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "melawai",
+    "database": "rakamin_academy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "melawai",
+    "database": "rakamin_academy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
