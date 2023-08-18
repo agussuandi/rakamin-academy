@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Button, Center, Container, Flex, Text } from '@chakra-ui/react'
+import { Box, Button, Center, Container, Flex } from '@chakra-ui/react'
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null));
@@ -33,7 +33,7 @@ function Board() {
   const status = calculateStatus(winner, squares, nextValue);
 
   return (
-    <Container>
+    <Container my={5} border="1px">
       <Center pt={10} fontSize={'lg'}>{status}</Center>
       <Flex justifyContent="center" alignItems="center" h="30vh">
         <Flex color="white" justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
